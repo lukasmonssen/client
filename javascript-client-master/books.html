@@ -3,8 +3,8 @@
 <head>
 
   <link rel="stylesheet" href="lib/css/bootstrap.css">
-    <link rel="stylesheet" href="/lib/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="lib/css/bootstrap.lumen.min.css">
+    <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/sticky-footer.css">
 
   <meta charset="UTF-8">
@@ -14,10 +14,8 @@
 <body>
 
 <div class="container">
-
   <div class="row">
     <div class="col-lg-12">
-
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -30,11 +28,9 @@
             </button>
             <a class="navbar-brand" href="index.html">Lukas' Client</a>
           </div>
-
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
               <li class="active"><a href="books.html">Se alle bøger <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Om os</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="login.html">Login</a></li>
@@ -49,11 +45,11 @@
       </div>
       <table class="table">
         <thead>
-        <th>Titel</th>
-        <th>Undertitel</th>
-        <th>Forfatter(e)</th>
-        <th>Udgiver</th>
-        <th style="width: 75px;">Pris</th>
+        <th>ISBN</th>
+        <th>TITLE</th>
+        <th>EDITION</th>
+        <th>AUTHOR</th>
+
         </thead>
         <tbody id="booksTableBody">
 
@@ -71,17 +67,19 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="/lib/js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/books.page.js"></script>
-<script type="text/javascript" src="/lib/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/lib/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/books.page.js"></script>
+<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
         getBooks();
     });
 </script>
+
 
 </body>
 </html>

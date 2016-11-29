@@ -1,26 +1,26 @@
+function login()
+{
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var type = $("#type").val();
 
-$(document).ready(function () {
+    $.ajax({
+        url: "https://localhost:8000/login",
+        type: "POST",
+        dataType: "json",
+        xhrFields: { withCredentials: true },
+        data: JSON.stringify({
+            "username" : username,
+            "password" : password
+        }),
 
-  $("#loginButton").on("click", function(e){
-    e.preventDefault();
-
-    var email = $("#inputEmail").val();
-    var pw = $("#inputPassword").val();
-
-    SDK.login(email, pw, function(err, data){
-
-      //On wrong credentials
-      if(err) {
-        return $("#loginForm").find(".form-group").addClass("has-error");
-      }
-
-      //Login OK!
-      $("#loginForm").find(".form-group").addClass("has-success");
-
-      window.location.href = "../admin.html";
-
+        success: function(data) { alert(JSON.stringify(data));
+           if(data.type == 1)
+           {
+               window.location.href = "admin.html";}
+           else {
+               window.location.href = "user.html";}
+            },
+        error: function(data) { alert(JSON.stringify(data)); }
     });
-
-  });
-
-});
+}

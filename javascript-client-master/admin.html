@@ -3,9 +3,9 @@
 <head>
 
   <link rel="stylesheet" href="lib/css/bootstrap.css">
-  <link rel="stylesheet" href="lib/css/bootstrap.lumen.min.css">
+  <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/sticky-footer.css">
-
 
   <meta charset="UTF-8">
   <title>Admin panel</title>
@@ -13,106 +13,9 @@
 </head>
 <body>
 
-
-<!-- New Book Modal -->
-<div class="modal fade" id="newBookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Opret ny bog</h4>
-      </div>
-      <div class="modal-body">
-
-        <div class="row" >
-          <div class="col-md-12">
-            <div class="form-group">
-              <label class="control-label" for="bookTitle">Title</label>
-              <input class="form-control" id="bookTitle" type="text">
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <label class="control-label" for="bookSubTitle">Under titel</label>
-              <input class="form-control" id="bookSubTitle" type="text">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="control-label" for="bookEdition">Udgave</label>
-              <input class="form-control" id="bookEdition" type="text">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="control-label" for="bookPrice">Pris (kr)</label>
-              <input class="form-control" id="bookPrice" type="text">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="control-label" for="bookPageCount">Sideantal</label>
-              <input class="form-control" id="bookPageCount" type="text">
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label" id="publishersRadio">Forlag</label>
-              <!-- Values set by jQuery -->
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label" id="authorsCheckbox">Forfatter(e)</label>
-              <!-- Values set by jQuery -->
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
-        <button type="button" class="btn btn-success" id="createBookButton">Opret bog</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- New User Modal -->
-<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-
-        <h4 class="modal-title">New user title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <div class="container">
-
   <div class="row">
     <div class="col-lg-12">
-
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -125,81 +28,52 @@
             </button>
             <a class="navbar-brand" href="index.html">Lukas' Client</a>
           </div>
-
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-              <li><a>Hej, <span id="currentUserName"></span></a></li>
+              <li><a> <span id="currentUserName"></span></a></li>
+              <li><a href="ads.html">Se tilgængelige Annocer</a></li>
+              <li><a href="createBook.html">Opret ny Annonce</a> </li>
+              <li><a href="createBook.html">Opret ny bog</a></li>
+              <li><a href="updateUser.html">Opdater announce<a></li>
+              <li><a href="updateAd.html">Opdater announce<a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a id="logOutLink">Logud</a></li>
+              <li><a href="index.html">Logud</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-
       <div class="page-header">
-        <h1>Admin panel</h1>
+        <h1>Se alle brugere</h1>
       </div>
+      <table class="table">
+        <thead>
+        <th>UserID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Phonenumber</th>
+        <th>Address</th>
+        <th>Mobilepay</th>
+        <th>Cash</th>
+        <th>Transfer</th>
+        <th>Type</th>
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Bøger</h3>
-        </div>
-        <div class="panel-body">
+        </thead>
+        <tbody id="usersTableBody">
 
-          <table class="table table-striped">
-            <thead>
-            <th>Titel</th>
-            <th>Undertitel</th>
-            <th>Forfatter(e)</th>
-            <th>Udgiver</th>
-            <th style="width: 75px;">Pris</th>
-            </thead>
-            <tbody id="booksTableBody">
-
-            </tbody>
-          </table>
-
-          <hr>
-          <!-- Button trigger modal -->
-          <button class="btn btn-success" id="addNewBookButton">
-            <span class="glyphicon glyphicon-plus"></span> Opret ny bog
-          </button>
-
-        </div>
-      </div>
-
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Brugere</h3>
-        </div>
-        <div class="panel-body">
-
-          <table class="table table-striped">
-            <thead>
-            <th>Navn</th>
-            <th>Brugernavn</th>
-            <th>Email</th>
-            <th>ID</th>
-            </thead>
-            <tbody id="usersTableBody">
-
-            </tbody>
-          </table>
-
-          <hr>
-          <button class="btn btn-success" data-toggle="modal" data-target="#newUserModal">
-            <span class="glyphicon glyphicon-plus"></span> Opret ny bruger
-          </button>
-
-        </div>
+        </tbody>
+      </table>
 
       </div>
-
     </div>
   </div>
 </div>
+
+
+
 
 <footer class="footer">
   <div class="container">
@@ -207,10 +81,19 @@
   </div>
 </footer>
 
-<script src="lib/js/jquery-3.1.1.min.js"></script>
-<script src="lib/js/bootstrap.min.js"></script>
-<script src="js/sdk.js"></script>
-<script src="js/admin.page.js"></script>
+<script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/admin.page.js"></script>
+<script type="text/javascript" src="js/sdk.js"></script>
+<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    getUsers();
+  });
+</script>
+
 
 </body>
 </html>
