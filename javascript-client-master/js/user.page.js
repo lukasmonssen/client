@@ -2,28 +2,26 @@ function getUsers ()
 {
     $.ajax(
         {
-            url:"https://localhost:8000/getusers",
+            url:"https://localhost:8000/getads",
             method: "GET",
             dataType:"json",
             xhrFields: {withCredentials: true},
 
             success: function(data)
             {
-                var $booksTableBody = $("#usersTableBody")
-                data.forEach(function (user) {
+                var $booksTableBody = $("#adsTableBody")
+                data.forEach(function (ads) {
                     $booksTableBody.append(
                         "<tr>" +
-                        "<td>" + user.userId + "</td>" + "<br>" +
-                        "<td>" + user.username + "</td>" +  "<br>" +
-                        "<td>" + user.password + "</td>" +  "<br>" + "" +
-                        "<td>" + user.phonenumber + "</td>" + "<br>" +
-                        "<td>" + user.address + "</td>" + "<br>" +
-                        "<td>" + user.email + "</td>" + "<br>" +
-                        "<td>" + user.mobilepay + "</td>" + "<br>" +
-                        "<td>" + user.cash + "</td>" + "<br>" +
-                        "<td>" + user.transfer+ "</td>" + "<br>" +
-                        "<td>" + user.type + "</td>" +
-                        "</tr>"  )
+                        "<td>"  +  ads.adId  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.userId  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.isbn  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.price  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.rating  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.comment  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.deleted  +  "</td>" + "<br>" +
+                        "<td>"  +  ads.locked  +  "</td>" + "<br>" +
+                        "<tr>" )
                 })
 
                 $("#tblUsers").dataTable(
@@ -32,17 +30,14 @@ function getUsers ()
                         processing: true,
                         bDestroy: true,
                         columns: [
+                            { data: "adId" },
                             { data: "userId" },
-                            { data: "username" },
-                            { data: "password" },
-                            { data: "phonenumber" },
-                            { data: "address" },
-                            { data: "email" },
-                            { data: "mobilepay" },
-                            { data: "cash" },
-                            { data: "transfer" },
-                            { data: "type" },
-
+                            { data: "isbn" },
+                            { data: "price" },
+                            { data: "rating" },
+                            { data: "comment" },
+                            { data: "deleted" },
+                            { data: "locked" },
                         ]
                     });
             },

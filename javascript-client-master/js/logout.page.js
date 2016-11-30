@@ -1,7 +1,7 @@
 /**
  * Created by Lukas on 29-11-2016.
  */
-function logout ()
+function logOut ()
 {
     $.ajax(
         {

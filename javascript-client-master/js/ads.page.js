@@ -42,13 +42,8 @@ function getAds()
                      { data: "comment" },
                      { data: "deleted" },
                      { data: "locked" },
-
-
-
                  ]
              });
-
      }
-
-    })
+   })
 }
