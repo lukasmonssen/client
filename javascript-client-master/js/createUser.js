@@ -2,20 +2,25 @@
  * Created by Lukas on 29-11-2016.
  */
 
+$(document).on("click","#ButtonCreateUser", function ()
+    {
+        createUser()
+    })
+
 function createUser()
 {
     var username = $("#textCreateUserUsername").val();
     var password = $("#textCreateUserPassword").val();
     var email = $("#textCreateUserEmail").val();
-    var phonenumber = $("#textCreateUserPhonenumber").val();
+    var phonenumber = +$("#textCreateUserPhonenumber").val();
     var address = $("#textCreateUserAddress").val();
     var mobilepay = +$("#checkboxCreateUserMobilepay").prop("checked");
     var transfer = +$("#checkboxCreateUserTransfer").prop("checked");
     var cash = +$("#checkboxCreateUserCash").prop("checked");
 
     $.ajax(
-    {
-        url:"https://localhost:8000/createUser",
+     {
+        url:"https://localhost:8000/createuser",
         method:"POST",
         dataType:"json",
         xhrFields: {withCredentials: true},

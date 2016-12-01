@@ -52,14 +52,9 @@
                     <form class="form">
                         <div class="form-group form-md">
                             <div class="form-group">
-                                <label class="control-label">UserId:</label>
-                                <input type="text" class="form-control" style="..." id="textCreateAdUserId">
+                                <label class="control-label">ISBN:</label>
+                                <input type="text" class="form-control" style="..." id="textCreateAdIsbn">
                             </div>
-                            <div class="form-group">
-                            <label class="control-label">ISBN:</label>
-                            <input type="text" class="form-control" style="..." id="textCreateAdIsbn">
-                            </div>
-                            <div>
                             <div class="form-group">
                                 <label class="control-label">Rating (X/5):</label>
                                 <input type="text" class="form-control" style="..." id="textCreateAdRating">
@@ -70,9 +65,8 @@
                             </div>
                             <div class="form-group">
                                     <label class="control-label">Price:</label>
-                                    <input type="text" class="form-control" style="..." id="textCreateAdPricce">
+                                    <input type="text" class="form-control" style="..." id="textCreateAdPrice">
                             </div>
-
                             <div class="form-group">
                                 <input type="button" class="btn btn-primary" value="Opret Annonce" id="ButtonCreateAd">
                             </div>
@@ -83,10 +77,6 @@
         </div>
     </div>
 </div>
-</div>
-
-
-
 
 <footer class="footer">
     <div class="container">
@@ -97,19 +87,10 @@
 <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/createAd.js"></script>
-<script type="text/javascript" src="js/sdk.js"></script>
 <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-        $("divLoad").on("click", "#ButtonCreateAd", function ()
-        {
-            createAd();
-        });
-    });
-</script>
+
 
 </body>
 </html>

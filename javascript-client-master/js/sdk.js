@@ -65,7 +65,7 @@ var SDK = {
     SDK.Storage.remove("user");
   },
 
-  login: function (username, password, cb) {
+  Login: function (username, password, cb) {
     this.request({
       data: {
         username: username,

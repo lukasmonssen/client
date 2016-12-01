@@ -2,23 +2,26 @@
  * Created by Lukas on 30-11-2016.
  */
 
+$(document).on("click","#ButtonCreateAd", function ()
+    {
+        createAd()
+    })
+
 function createAd()
 {
-    var userId = $("#textCreateAdUserId").val();
-    var isbn = $("#textCreateAdIsbn").val();
-    var rating = $("#textCreateAdRating").val();
-    var comment = $("#textCreateAdComment").val();
-    var price = $("#textCreateAdPrice").val();
+    var isbn = +$("#isbn").val();
+    var rating = +$("#rating").val();
+    var comment = $("#comment").val();
+    var price = +$("#price").val();
 
     $.ajax(
         {
-            url:"https://localhost:8000/createAd",
+            url:"https://localhost:8000/createad",
             method:"POST",
             dataType:"json",
             xhrFields:{withCredentials: true},
             data: JSON.stringify(
             {
-                "userId": userId,
                 "isbn": isbn,
                 "rating": rating,
                 "comment": comment,
@@ -27,7 +30,7 @@ function createAd()
 
             success: function(data)
             {
-                alert("Ad has been created");
+                alert("Ad has been created successfully");
                 alert(JSON.stringify(data));
                 window.location.href = "ads.html"
             },
