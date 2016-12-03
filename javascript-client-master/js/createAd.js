@@ -9,10 +9,10 @@ $(document).on("click","#ButtonCreateAd", function ()
 
 function createAd()
 {
-    var isbn = +$("#isbn").val();
-    var rating = +$("#rating").val();
+    var isbn = $("#isbn").val();
+    var rating = $("#rating").val();
     var comment = $("#comment").val();
-    var price = +$("#price").val();
+    var price = $("#price").val();
 
     $.ajax(
         {

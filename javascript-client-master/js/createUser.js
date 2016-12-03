@@ -40,7 +40,7 @@ function createUser()
         {
             alert("User has been created");
             alert(JSON.stringify(data));
-            window.location.href = "user.html";
+            window.location.href = "index.html";
         },
 
         error: function (data)
