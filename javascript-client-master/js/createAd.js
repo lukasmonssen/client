@@ -9,10 +9,11 @@ $(document).on("click","#ButtonCreateAd", function ()
 
 function createAd()
 {
-    var isbn = $("#isbn").val();
-    var rating = $("#rating").val();
-    var comment = $("#comment").val();
-    var price = $("#price").val();
+    var isbn = +$("#textCreateAdIsbn").val();
+    var rating = +$("#textCreateAdRating").val();
+    var comment = $("#textCreateAdComment").val();
+    var price = +$("#textCreateAdPrice").val();
+
 
     $.ajax(
         {
