@@ -15,7 +15,6 @@ function getUsers ()
                 "<tr>" +
                 "<td>" + user.userId + "</td>" + "<br>" +
                 "<td>" + user.username + "</td>" +  "<br>" +
-                "<td>" + user.password + "</td>" +  "<br>" + "" +
                 "<td>" + user.phonenumber + "</td>" + "<br>" +
                 "<td>" + user.address + "</td>" + "<br>" +
                 "<td>" + user.email + "</td>" + "<br>" +
@@ -34,7 +33,6 @@ function getUsers ()
                 columns: [
                   { data: "userId" },
                   { data: "username" },
-                  { data: "password" },
                   { data: "phonenumber" },
                   { data: "address" },
                   { data: "email" },

@@ -1,7 +1,16 @@
 /**
  * Created by Lukas on 29-11-2016.
  */
-function logOut ()
+
+$(document).ready(function()
+{
+    $("#logout").click(function ()
+    {
+       logout();
+    });
+
+});
+function logout ()
 {
     $.ajax(
         {
