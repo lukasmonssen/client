@@ -9,7 +9,7 @@ $(document).ready(function(){
     getUsers();
 });
 /**
- * Anvender getUsersfunktionen
+ * Anvender getUsers funktionen
  */
 function getUsers ()
 {
@@ -28,7 +28,7 @@ function getUsers ()
         success: function(data)
         {
               /**
-               *Laver en veriabel users
+               *Laver en variabel users
                */
           var $usersTableBody = $("#usersTableBody")
           data.forEach(function (user) {
@@ -44,10 +44,10 @@ function getUsers ()
                 "<td>" + user.transfer+ "</td>" + "<br>" +
                 "<td>" + user.type + "</td>" +
                 "</tr>"  )
-          })
+          });
 
             /**
-             * Sætter daterne til de forskellige data navne
+             * Tildeler data til de forskellige data navne
              */
           $("#tblUsers").dataTable(
               {

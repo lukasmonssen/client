@@ -2,29 +2,41 @@
  * Created by Lukas on 29-11-2016.
  */
 
-//Opretter en funktion med metoden getAds, der er defineret på serversiden
+/**
+ * Opretter en funktion med metoden getAds, der er defineret på serversiden
+ */
 
 $(document).ready(function()
 {
     getAds();
 });
+/**
+ *Anvender getAdsfunktionen
+ */
 
-//Anvender getAdsfunktionen
 function getAds()
 {
-//Laver et AJAX kald til serveren. Med metoden af Get, typen som JSON. Samt withCredentials hvilket gør at AJAX request sender Cookien med til serveren.
+    /**
+     *Laver et AJAX kald til serveren. Med metoden af Get, typen som JSON. Samt withCredentials hvilket gør at AJAX request sender Cookien med til serveren.
+     */
     $.ajax
     ({
         url:"https://localhost:8000/getads",
         method:"GET",
         dataType:"json",
         xhrFields: {withCredentials: true},
-// Hvis funktionen lykkedes, skal den tage udgangspunkt i usersTablebody. Så tager den alle oplysningerne omkring annoncer
+        /**
+         *Hvis funktionen lykkedes, skal den tage udgangspunkt i adsTablebody. Så tager den alle oplysningerne omkring annoncer
+         */
             success: function(data)
             {
-// Laver en variable med ads
+                /**
+                 * Laver en variable med ads
+                 */
                 var $adsTableBody = $("#adsTableBody");
-                //Den skal tage udgangspunkt i adID
+                /**
+                 * Den skal tage udgangspunkt i adID
+                 */
                 var adId = $("#adId");
                 data.forEach(function (ad)
                 {
@@ -44,6 +56,9 @@ function getAds()
                     )
                 });
 
+                /**
+                 * Laver en ny datatable med de forskellige variabler.
+                 */
                 $("#tblAds").dataTable(
                     {
                         data: data,
@@ -63,9 +78,15 @@ function getAds()
                     });
 
 
-
+                /**
+                 * ReserveAd funktion oprettes med knap. Den her gang er det et post Request
+                 */
                 $(".ReserveAdButton").on("click", function()
                 {
+                    /**
+                     * Laver en variable med AdId
+                     */
+
                     var adId = +$("adId");
                     var confirmation = confirm("Do you want to reserve this book?");
                     if (confirmation == true)
@@ -93,9 +114,15 @@ function getAds()
     });
 }
 
+/**
+ * Prøver at lave en ny function med reserveAd, men det virker ikke optimalt.
+ * Den virker hvis jeg ændre id til 10, så reservere programmet annoncen med adID 10, så andre brugere ikke kan bruge den annonce.
+ */
 function reserveAd ()
 {
-
+    /**
+     * Det er ligesom det tidligere men det virker ikke optimalt
+     */
     var adId = +$("#reserveAd");
     $.ajax
     ({
