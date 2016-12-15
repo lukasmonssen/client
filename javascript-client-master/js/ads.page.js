@@ -2,23 +2,29 @@
  * Created by Lukas on 29-11-2016.
  */
 
+//Opretter en funktion med metoden getAds, der er defineret på serversiden
+
 $(document).ready(function()
 {
     getAds();
 });
 
+//Anvender getAdsfunktionen
 function getAds()
 {
+//Laver et AJAX kald til serveren. Med metoden af Get, typen som JSON. Samt withCredentials hvilket gør at AJAX request sender Cookien med til serveren.
     $.ajax
     ({
         url:"https://localhost:8000/getads",
         method:"GET",
         dataType:"json",
         xhrFields: {withCredentials: true},
-
+// Hvis funktionen lykkedes, skal den tage udgangspunkt i usersTablebody. Så tager den alle oplysningerne omkring annoncer
             success: function(data)
             {
+// Laver en variable med ads
                 var $adsTableBody = $("#adsTableBody");
+                //Den skal tage udgangspunkt i adID
                 var adId = $("#adId");
                 data.forEach(function (ad)
                 {

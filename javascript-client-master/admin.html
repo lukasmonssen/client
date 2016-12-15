@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<!-- Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.   -->
+  <!-- Det gør sig også gældende i de andre klasser.   -->
   <link rel="stylesheet" href="lib/css/bootstrap.css">
   <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
@@ -31,6 +32,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
               <li><a> <span id="currentUserName"></span></a></li>
+              <!--Links i top-baren af siden, til at kunne navigere rundt på siden.    -->
               <li><a href="ads.html">Ads</a></li>
               <li><a href="books.html">Books</a></li>
               <li><a href="createBook.html">Create book</a></li>
@@ -40,7 +42,8 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.html">Logud</a></li>
+              <!-- Logud funktionen    -->
+              <li><a href="index.html">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -49,10 +52,12 @@
       <div class="page-header">
         <h3>Welcome admin<h3>
           <h6>Here is a table of all users of the bookstore<h6>
+
       </div>
+      <!--  Udstiller et table for admin, med de nedentående navne, og slutteligt henter i det usersTableBody jeg sætter som ID, hvilket jeg opretter i JS klassen  -->
       <table class="table">
         <thead>
-        <th>UserID</th>
+        <th>UserId</th>
         <th>Username</th>
         <th>Phonenumber</th>
         <th>Address</th>
@@ -62,7 +67,8 @@
         <th>Transfer</th>
         <th>Type</th>
 
-        </thead>
+        <!-- ID tager som der står, udgangspunkt i usersTableBody   -->
+            </thead>
         <tbody id="usersTableBody">
 
         </tbody>
@@ -83,16 +89,10 @@
 <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/admin.page.js"></script>
 <script type="text/javascript" src="js/logout.page.js"></script>
-<script type="text/javascript" src="js/updateUser.js"></script>
-<script type="text/javascript" src="js/sdk.js"></script>
 <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    getUsers();
-  });
-</script>
+
 
 
 </body>

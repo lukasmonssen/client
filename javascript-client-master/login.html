@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <!-- Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.   -->
+  <!-- Det gør sig også gældende i de andre klasser.   -->
   <link rel="stylesheet" href="lib/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/sticky-footer.css">
@@ -43,7 +44,7 @@
     </div>
 
 
-
+    <!-- Nedenstående textboxe skal tage i mod værdierne der bliver tastet ind og bliver verificeres på JS siden   -->
       <input type="text" id="username" placeholder="Enter username"/>
       <input type="password" id="password" placeholder="Enter password"/>
       <input type="button" class="btn btn-primary" id="login" value="Login"/>
@@ -65,12 +66,6 @@
 <script src="js/login.page.js"></script>
 
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#login").click(function() {
-      login()});
-  });
-</script>
 
 
 </body>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!-- Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.   -->
+    <!-- Det gør sig også gældende i de andre klasser.   -->
     <link rel="stylesheet" href="lib/css/bootstrap.css">
     <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
@@ -31,11 +32,13 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav">
                             <li><a> <span id="currentUserName"></span></a></li>
+                            <!--Links i top-baren af siden, til at kunne navigere rundt på siden.    -->
                             <li><a href="ads.html">Ads</a></li>
                             <li><a href="updateUser.html">Update User</a></li>
                             <li><a href="myAds.html">MyAds</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <!-- Logud funktionen    -->
                             <li><a href="index.html">Logout</a></li>
                         </ul>
                     </div>
@@ -46,7 +49,7 @@
                 <h1>Update user</h1>
             </div>
 
-
+            <!-- Opretter tekstfelter hvor brugeren kan skrive de oplysninger på hamselv der er et krav for at de kan ændres-->
             <div id="divUpdateUser">
                 <form class="form">
                     <div class="form-group form-md">
@@ -80,6 +83,7 @@
                         <label class="control-label">Transfer:</label>
                         <input type="checkbox" class="form-control" style="..." id="checkboxUpdateTransfer">
                         <div class="form-group">
+                            <!-- Knap til at opdatere en bruger med et ID der er givet på serversiden -->
                             <input type="button" class="btn btn-primary" value="Update User" id="ButtonUpdateUser">
                         </div>
                     </div>

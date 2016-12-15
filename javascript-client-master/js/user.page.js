@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    getUsers();
+});
 function getUsers ()
 {
     $.ajax(

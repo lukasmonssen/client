@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!-- Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.   -->
+    <!-- Det gør sig også gældende i de andre klasser.   -->
     <link rel="stylesheet" href="lib/css/bootstrap.css">
     <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
@@ -30,19 +31,22 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav">
+                            <!--Links i top-baren af siden, til at kunne navigere rundt på siden.    -->
+
                             <li> <a href="ads.html">Ads</a></li>
                             <li> <a href="myAds.html">MyAds </a></li>
 
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <!-- Logud funktionen    -->
                             <li><a href="index.html">Logout</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-
+            <!--  Udstiller et table for mine annoncer, med de nedentående oplysninger, og slutteligt henter i det MyadsTableBody jeg sætter som adID, som der er blevet reserveret  -->
             <div class="page-header">
                 <h1>Se alle Annoncer</h1>
             </div>

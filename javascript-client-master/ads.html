@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!--  Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.  -->
     <link rel="stylesheet" href="lib/css/bootstrap.css">
     <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
@@ -30,6 +30,8 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav">
+                            <li><a><span id="currentUserName"></span></a></li>
+                            //Links i top-baren af siden, til at kunne navigere rundt på siden.
                             <li class="active"><a href="ads.html">Ads <span class="sr-only">(current)</span></a></li>
                             <li><a href="createAd.html">Create Add</a></li>
 
@@ -37,6 +39,7 @@
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <!-- Logudfunktion   -->
                             <li><a href="index.html">Logout</a></li>
                         </ul>
                     </div>
@@ -47,6 +50,7 @@
             <div class="page-header">
                 <h1>Se alle Annoncer</h1>
             </div>
+            <!--  Udstiller et table for admin, med de nedentående navne, og slutteligt henter i det usersTableBody jeg sætter som ID, hvilket jeg opretter i JS klassen  -->
             <table class="table">
                 <thead>
                 <th>AdID</th>
@@ -58,7 +62,7 @@
                 <th>Deleted</th>
                 <th>Locked</th>
 
-
+                <!-- ID tager som der står, udgangspunkt i adsTableBody   -->
                 </thead>
                 <tbody id="adsTableBody">
 
@@ -79,6 +83,7 @@
 <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/ads.page.js"></script>
+<script type="text/javascript" src="js/logout.page.js"></script>
 <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <!-- Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.   -->
+  <!-- Det gør sig også gældende i de andre klasser.   -->
   <link rel="stylesheet" href="lib/css/bootstrap.css">
     <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
@@ -30,18 +31,20 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-            <li class="active"><a href="books.html">Books <span class="sr-only">(current)</span></a></li>
+              <!--Links i top-baren af siden, til at kunne navigere rundt på siden.    -->
 
+              <li class="active"><a href="books.html">Books <span class="sr-only">(current)</span></a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="login.html">Login</a></li>
+              <!-- Logud funktionen    -->
+              <li><a href="index.html">Logout</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-
+      <!--  Udstiller et table for books, med de nedentående oplysninger, og slutteligt henter i det booksTableBody jeg sætter som ID, hvilket jeg opretter i JS klassen  -->
       <div class="page-header">
         <h1>Se alle bøger</h1>
       </div>
@@ -75,12 +78,6 @@
 <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        getBooks();
-    });
-</script>
 
 
 </body>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!-- Jeg henter stylingen til min Klient igennem de nedenstående CSS sider.   -->
+    <!-- Det gør sig også gældende i de andre klasser.   -->
     <link rel="stylesheet" href="lib/css/bootstrap.css">
     <link rel="stylesheet" href="lib/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
@@ -31,6 +32,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav">
                             <li><a> <span id="currentUserName"></span></a></li>
+                            <!--Links i top-baren af siden, til at kunne navigere rundt på siden.    -->
                             <li><a href="ads.html">Ads</a></li>
                             <li><a href="books.html">Books</a></li>
                             <li><a href="createBook.html">Create Book</a></li>
@@ -38,6 +40,7 @@
                             <li><a href="myAds.html">MyAds</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <!-- Logud funktionen    -->
                             <li><a href="index.html">Logout</a></li>
                         </ul>
                     </div>
@@ -48,7 +51,7 @@
                 <h1>Opret ny Bog</h1>
             </div>
 
-
+            <!-- Opretter tekstfelter hvor administratoren kan skrive de oplysninger på bøgerne der er et krav-->
             <div id= "divLoad" class="cssLoad">
                 <div id="divCreateBook">
                     <form class="form">
@@ -70,6 +73,7 @@
                                 <input type="text" class="form-control" style="..." id="textCreateBookAuthor">
                             </div>
                             <div class="form-group">
+                                <!-- Knap til at oprette en bog med et ID der er givet på serversiden -->
                                 <input type="button" class="btn btn-primary" value="Opret bog" id="ButtonCreateBook">
                             </div>
                         </div>
